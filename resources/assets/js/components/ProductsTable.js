@@ -11,12 +11,9 @@ export default class Sidebar extends Component {
     };
 
     componentWillReceiveProps(nextState) {
-        if(this.state.categoryId != nextState.categoryId || nextState.categoryId == null || nextState.brandsToFilter != null){
+        if(this.props.categoryId != nextState.categoryId || nextState.categoryId == null || nextState.brandsToFilter != null){
             var url = '';
-            // TODO
-            if(nextState.brandsToFilter != null && this.state.categoryId == nextState.categoryId) {
-                console.log('search');
-                url='/api/search';
+            if(nextState.brandsToFilter != null && nextState.brandsToFilter.size>0 && this.props.categoryId == nextState.categoryId) {
                 var result;
                 var result = fetch(url, {
                     method: 'POST',

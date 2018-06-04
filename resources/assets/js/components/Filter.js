@@ -16,10 +16,6 @@ export default class Filter extends Component {
     }
 
     componentWillReceiveProps(nextState) {
-        console.log(this.selectedCheckboxes);
-        console.log(this.props.categoryId);
-        console.log(nextState.categoryId);
-        console.log(this.props.categoryId != nextState.categoryId);
         if(this.props.categoryId != nextState.categoryId) {
             this.selectedCheckboxes = new Set();
         } else {

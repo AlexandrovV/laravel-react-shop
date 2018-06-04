@@ -60953,10 +60953,19 @@ var Sidebar = function (_Component) {
         value: function componentWillReceiveProps(nextState) {
             var _this2 = this;
 
+<<<<<<< HEAD
             if (this.state.categoryId != nextState.categoryId || nextState.categoryId == null || nextState.brandsToFilter != null) {
                 var url = '';
                 if (nextState.brandsToFilter != null && this.state.categoryId == nextState.categoryId) {
                     console.log('search');
+=======
+            if (this.props.categoryId != nextState.categoryId || nextState.categoryId == null || nextState.brandsToFilter != null) {
+                var url = '';
+                console.log(this.props.categoryId);
+                console.log(nextState.categoryId);
+                console.log(this.props.categoryId == nextState.categoryId);
+                if (nextState.brandsToFilter != null && nextState.brandsToFilter.size > 0 && this.props.categoryId == nextState.categoryId) {
+>>>>>>> Brand filter fixed
                     url = '/api/search';
                     var result;
                     var result = fetch(url, {
@@ -61141,10 +61150,17 @@ var Filter = function (_Component) {
     _createClass(Filter, [{
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextState) {
+<<<<<<< HEAD
             console.log(this.selectedCheckboxes);
             console.log(this.props.categoryId);
             console.log(nextState.categoryId);
             console.log(this.props.categoryId != nextState.categoryId);
+=======
+            // console.log(this.selectedCheckboxes);
+            // console.log(this.props.categoryId);
+            // console.log(nextState.categoryId);
+            // console.log(this.props.categoryId != nextState.categoryId);
+>>>>>>> Brand filter fixed
             if (this.props.categoryId != nextState.categoryId) {
                 this.selectedCheckboxes = new Set();
             } else {
