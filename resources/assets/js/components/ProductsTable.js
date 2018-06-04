@@ -13,8 +13,8 @@ export default class Sidebar extends Component {
     componentWillReceiveProps(nextState) {
         if(this.props.categoryId != nextState.categoryId || nextState.categoryId == null || nextState.brandsToFilter != null){
             var url = '';
-            if(nextState.brandsToFilter != null && nextState.brandsToFilter.size>0 && this.props.categoryId == nextState.categoryId) {
-                var result;
+            if(nextState.brandsToFilter != null && nextState.brandsToFilter.size > 0 && this.props.categoryId == nextState.categoryId) {
+                url='/api/search';
                 var result = fetch(url, {
                     method: 'POST',
                     headers: {

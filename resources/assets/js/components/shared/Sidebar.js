@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 export default class Sidebar extends Component {
 
@@ -27,9 +27,14 @@ export default class Sidebar extends Component {
     render() {
         return (
             <div className="sidebar">
-                <p className="lead">Category</p>
+                <p className="lead">Choose category:</p>
 
                 <div className="list-group">
+                    <Switch>
+                        <Route exact path='/'>
+                            <Link to='/show/all/products' className="list-group-item">Show all products</Link>
+                        </Route>
+                    </Switch>
                     {this.state.categories}
                 </div>
 		    </div>
