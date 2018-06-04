@@ -25,7 +25,6 @@ export default class ProductsTable extends Component {
         .then(results => {
             return results.json();
         }).then(data => {
-            console.log(data);
             let products = data.map((product) => {
                 return(
                     <tr key={product.id}>
@@ -37,7 +36,10 @@ export default class ProductsTable extends Component {
             })
             this.setState({products: products});
         })
+<<<<<<< HEAD
         console.log('fetched');
+=======
+>>>>>>> Adds products management
     }
 
     render() {
