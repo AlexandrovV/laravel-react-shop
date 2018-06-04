@@ -25,6 +25,9 @@ export default class Navbar extends Component {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/show/all/products">View Products</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/manage/products">Manage Products</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

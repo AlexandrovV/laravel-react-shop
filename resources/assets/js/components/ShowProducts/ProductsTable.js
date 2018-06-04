@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-export default class Sidebar extends Component {
+export default class ProductsTable extends Component {
 
     constructor() {
         super();
@@ -25,7 +26,6 @@ export default class Sidebar extends Component {
                         brands: Array.from(nextState.brandsToFilter),
                         categoryId: nextState.categoryId
                     })
-                    
                 })
                 .then(results => {
                     return results.json();
@@ -34,7 +34,7 @@ export default class Sidebar extends Component {
                         return(
                             <tr key={product.id}>
                                 <td>{product.brand}</td>
-                                <td>{product.name}</td>
+                                <td><Link to={'/show/product/'+product.id}>{product.name}</Link></td>
                                 <td>{product.price}$</td>
                             </tr>
                         )
@@ -73,7 +73,7 @@ export default class Sidebar extends Component {
                 return(
                     <tr key={product.id}>
                         <td>{product.brand}</td>
-                        <td>{product.name}</td>
+                        <td><Link to={'/show/product/'+product.id}>{product.name}</Link></td>
                         <td>{product.price}$</td>
                     </tr>
                 )

@@ -27,6 +27,18 @@ Route::get('/show/all/products', function () {
     return view('welcome');
 });
 
+Route::get('/show/product/{id}', function ($id) {
+    return view('welcome');
+});
+
 Route::get('/show/category/{id}/products', function ($id) {
+    return view('welcome');
+});
+
+Route::get('/manage/products', function () {
+    return view('welcome');
+});
+
+Route::get('/manage/product/{id}', function ($id) {
     return view('welcome');
 });

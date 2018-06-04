@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Sidebar from './shared/Sidebar';
+import Sidebar from '../shared/Sidebar';
 import ProductsTable from './ProductsTable';
 import Filter from './Filter';
 
