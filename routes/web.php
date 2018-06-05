@@ -42,3 +42,26 @@ Route::get('/manage/products', function () {
 Route::get('/manage/product/{id}', function ($id) {
     return view('welcome');
 });
+
+// Authentication Routes...
+Route::get('login', function () {
+    return view('welcome');
+})->name('login');
+Route::post('login', 'Auth\LoginController@authenticate');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', function () {
+    return view('welcome');
+})->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', function () {
+    return view('welcome');
+})->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', function () {
+    return view('welcome');
+})->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');

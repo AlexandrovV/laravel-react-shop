@@ -36,10 +36,6 @@ export default class ProductsTable extends Component {
             })
             this.setState({products: products});
         })
-<<<<<<< HEAD
-        console.log('fetched');
-=======
->>>>>>> Adds products management
     }
 
     render() {

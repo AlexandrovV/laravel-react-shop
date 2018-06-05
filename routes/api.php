@@ -55,3 +55,10 @@ Route::post('/search', function(Request $request) {
 
     return DB::select($sql);
 });
+
+Route::post('/register', 'Auth\RegisterController@register');
+Route::post('/login', 'Auth\LoginController@authenticate');
+
+Route::get('/auth', function(){
+    return Auth::user()!=null ? Auth::user() : "null";
+});
